@@ -15,19 +15,19 @@
   <form class="form-inline" action="/action_page.php">
     <div class="form-group">
       <label for="country">Country:</label>
-      <select id="country" onchange="update_defaults();refresh()"></select>
+      <select id="country" value="World" onchange="update_defaults();refresh()"></select>
     </div>
     <div class="form-group">
       <label for="pop">Population:</label>
-      <input type=number id=population onchange="country.value='N/A'; refresh()">
+      <input type=number id=population value="7530000000" onchange="country.value='N/A'; refresh()">
     </div>
     <div class="form-group">
       <label for="pop">Percent infected:</label>
-      <input type=number id=infection_rate onchange="refresh()">
+      <input type=number value="1" id=infection_rate onchange="refresh()">
     </div>
       <div class="form-group">
       <label for="pop">Death rate (percent):</label>
-      <input type=number id=corona_death_rate onchange="refresh()">
+      <input type=number value="3.4" id=corona_death_rate onchange="refresh()">
     </div>
     <p>
     = <span id=deaths_from_coronavirus></span> people will die from the virus.
@@ -36,8 +36,8 @@
     <!--Or <span id=percent_population_killed></span>% of the population.-->
     </p>
       <p>
-      Check out <a href="https://www.who.int/health-topics/coronavirus">World Health Organization</a> or <a href="https://www.worldometers.info/coronavirus/">Worldometer</a> for up to date info. 
-      </p>
+      Note the World Health Organization estimated a death rate of 3.4% as of March 3, 2020. Check out <a href="https://www.who.int/health-topics/coronavirus">World Health Organization</a> or <a href="https://www.worldometers.info/coronavirus/">Worldometer</a> for up to date info. 
+    </p>
   </form>
 </div>
 
@@ -1049,7 +1049,8 @@
         country.appendChild(new_country);
     }
     
-    country.value = "world"
+    country.value = "World"
+  
     let population_e = document.getElementById("population");
     let corona_death_rate_e = document.getElementById("corona_death_rate");
     let infection_rate_e = document.getElementById("infection_rate");
